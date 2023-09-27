@@ -41,6 +41,8 @@ spec:
       {{- if .Values.dashboard.priorityClassName }}
       priorityClassName: {{ .Values.dashboard.priorityClassName | quote }}
       {{- end }}
+      securityContext:
+        fsGroup: 1200
       containers:
       - command:
         - polaris
